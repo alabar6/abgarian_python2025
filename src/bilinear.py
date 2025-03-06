@@ -1,5 +1,4 @@
 import numpy as np
-from utils.basis import linear_basis
 from utils.grid import RectangularGrid
 
 class BilinearInterpolation:
@@ -32,7 +31,7 @@ class BilinearInterpolation:
 
     assert np.size(i) == 1 and np.size(j) == 1, "Grid or point is set incorrectly"
 
-    
+
 
     
 
