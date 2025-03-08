@@ -1,5 +1,17 @@
 import numpy as np
-from src.bilinear import BilinearInterpolation
+import cv2
+import matplotlib.pyplot as plt
+from utils.imagetools import read_image, plot_images
+from src.resize import increase_size
 
-class Demo:
+def demo():
+   img = read_image(path="C:/Users/user/Desktop/interpolation/abgarian_python2025/data/cat_no_noise.png", 
+                    to_float=True)
+   
+   new_image = increase_size(img, (2, 2))
+
+   plot_images([img, new_image])
+
+if __name__ == "__main__":
+   demo()
    

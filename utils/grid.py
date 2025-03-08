@@ -1,14 +1,14 @@
 import numpy as np
 
 class Grid:
-  """
-  Mother Grid class
-  """
-  pass
-                                                    
+    """
+    Mother Grid class
+    """
+    pass
+                                    
 class RectangularGrid:
   """
-  Makes a rectangular grid with given x, y coordinates
+  A rectangular grid with given x, y coordinates
   """
 
   def __init__(self,
@@ -18,12 +18,15 @@ class RectangularGrid:
     self.x_coords = x_coords
     self.y_coords = y_coords
 
-  def meshgrid(self):       
+  def meshgrid(self):
+    """
+    Makes a meshgrid from ``x_coords``, ``y_coords`` using ``np.meshgrid``
+    """     
     return np.meshgrid(self.x_coords, self.y_coords)
   
 class EquidistGrid(RectangularGrid):
   """
-  Makes a rectangular grid with fixed gap between points
+  A rectangular grid with fixed gap between points
   """
 
   def __init__(self,
