@@ -1,17 +1,52 @@
 [project]
-name = "abgarian-python2025"
+name = "abgarian_python2025"
+
 version = "0.1.0"
-description = ""
+dynamic = ["version"]
+
+description = "Study project about interpolation"
+
 authors = [
     {name = "Alexander Abgarian", email = "lexabgarian@gmail.com"}
 ]
+
 readme = "README.md"
+
 requires-python = ">=3.13"
-dependencies = ["numpy (>=2.0.0)", "matplotlib (>=3.10.1,<4.0.0)", "cv2 (>=4.11.0.86)"]
+
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Typing :: Typed",
+]
+
+dependencies = ["numpy (>=2.0.0)", "matplotlib (>=3.10.1,<4.0.0)", "opencv-python (>=4.11.0.86)", "click (>=8.1.8,<9.0.0)"]
+
 
 [project.urls]
 "Homepage" = "https://github.com/alabar6/abgarian_python2025"
 
+[tool.poetry]
+packages = [
+    { include = "src" },
+]
+
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+
+[tool.black]
+line-length = 79
+target-version = ["py311"]
+
+
+[tool.poetry.scripts]
+format = "black:main"
+demo = "src.demo:demo"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^25.1.0"
+ruff = "^0.9.9"
