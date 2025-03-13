@@ -1,0 +1,17 @@
+[project]
+name = "abgarian-python2025"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Alexander Abgarian", email = "lexabgarian@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = ["numpy (>=2.0.0)", "matplotlib (>=3.10.1,<4.0.0)", "cv2 (>=4.11.0.86)"]
+
+[project.urls]
+"Homepage" = "https://github.com/alabar6/abgarian_python2025"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
