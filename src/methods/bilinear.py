@@ -1,5 +1,5 @@
 import numpy as np
-from utils.grid import RectangularGrid
+from src.utils.grid import RectangularGrid
 
 
 class BilinearInterpolation:

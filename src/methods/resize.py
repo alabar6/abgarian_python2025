@@ -1,6 +1,6 @@
 import numpy as np
-from utils.grid import RectangularGrid
-from src.bilinear import BilinearInterpolation
+from src.utils.grid import RectangularGrid
+from src.methods.bilinear import BilinearInterpolation
 
 def increase_size(image: np.ndarray,
                   scale: tuple[int, int]) -> np.ndarray:
