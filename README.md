@@ -1,6 +1,6 @@
 # Interpolation
 
-Study project during IITP Python courses. 
+Study project during IITP Python courses. In this project I implement some 2D interpolation techinques, including bilinear and optimal in L2 interpolation.
 
 ## Quick start
 
@@ -21,3 +21,19 @@ Study project during IITP Python courses.
     ```pwsh
     poetry install
     ```
+
+## Ruff check
+
+To check some rules, run:
+
+```pwsh
+poetry run ruff check
+```
+
+## Basic functionality
+
+To use some interpolation techinques, run:
+
+```pwsh
+poetry run demo --image_dir [...] --method [...] --scale_x [...] --scale_y [...]
+```

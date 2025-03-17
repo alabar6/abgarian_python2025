@@ -1,6 +1,7 @@
-import numpy as np
 import cv2
 import matplotlib.pyplot as plt
+import numpy as np
+
 
 def read_image(path: str,
                rgb: bool = False,

@@ -1,9 +1,8 @@
-import numpy as np
-import cv2
 import click
-import matplotlib.pyplot as plt
-from src.utils.imagetools import read_image, plot_images
+
 from src.methods.resize import increase_size
+from src.utils.imagetools import plot_images, read_image
+
 
 @click.command()
 @click.option("--image_dir", default = "./src/data/cat.png", help = "Directory of image")

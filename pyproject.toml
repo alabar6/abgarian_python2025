@@ -21,7 +21,7 @@ classifiers = [
   "Typing :: Typed",
 ]
 
-dependencies = ["numpy (>=2.0.0)", "matplotlib (>=3.10.1,<4.0.0)", "opencv-python (>=4.11.0.86)", "click (>=8.1.8,<9.0.0)"]
+dependencies = ["numpy (>=2.0.0)", "matplotlib (>=3.10.1,<4.0.0)", "opencv-python (>=4.11.0.86)", "click (>=8.1.8,<9.0.0)", "ruff (>=0.11.0,<0.12.0)"]
 
 
 [project.urls]
@@ -31,6 +31,15 @@ dependencies = ["numpy (>=2.0.0)", "matplotlib (>=3.10.1,<4.0.0)", "opencv-pytho
 packages = [
     { include = "src" },
 ]
+
+[tool.ruff]
+# Enable flake8-bugbear (\B) rules.
+select = ["E", "F", "B", "I"]
+ignore = ["E501", "E741"]  # Ignore line length violations and others
+
+# Allow autofix for all enabled rules (when \--fix\) is provided.
+fixable = ["ALL"]
+unfixable = []
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
@@ -49,4 +58,3 @@ demo = "src.demo:demo"
 
 [tool.poetry.group.dev.dependencies]
 black = "^25.1.0"
-ruff = "^0.9.9"
