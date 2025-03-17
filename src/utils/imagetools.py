@@ -89,12 +89,15 @@ def plot_images(images: list[np.ndarray],
     Title of saved image. If ``save_dir`` is not None, ``save_title`` also must be not None. The default is None
     """
 
+    if titles is not None:
+        assert len(images) == len(titles), "The number of titles should be the same as the number of pictures"
+
     fig, axs = plt.subplots(nrows = 1, ncols = len(images), figsize = figsize)
     # axs = axs.ravel()
 
     for i, image in enumerate(images):
         axs[i].imshow(image, cmap='gray', vmin=0, vmax=1)
-        # axs[i].axis('off')
+        axs[i].axis('off')
         if titles is not None:
             axs[i].set_title(titles[i], fontsize=fontsize)
 

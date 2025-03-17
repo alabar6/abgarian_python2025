@@ -19,8 +19,7 @@ def demo(image_dir, method, scale_x, scale_y):
 
     if method == "bilinear": 
         new_image = increase_size(img, scale)
-
-    plot_images([img, new_image])
+        plot_images(images=[img, new_image], titles=["Original", "Resized via bilinear interpolation"])
 
 
 if __name__ == "__main__":
