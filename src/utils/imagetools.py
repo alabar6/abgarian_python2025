@@ -48,7 +48,7 @@ def read_image(path: str,
         img = img / 255 
 
     if shape is not None:
-        img = cv2.resize(img, (512, 512))
+        img = cv2.resize(img, shape)
 
     return img
 
@@ -92,14 +92,14 @@ def plot_images(images: list[np.ndarray],
     if titles is not None:
         assert len(images) == len(titles), "The number of titles should be the same as the number of pictures"
 
-    fig, axs = plt.subplots(nrows = 1, ncols = len(images), figsize = figsize)
+    fig, axs = plt.subplots(nrows = 1, ncols = len(images), figsize = figsize, squeeze=False)
     # axs = axs.ravel()
 
     for i, image in enumerate(images):
-        axs[i].imshow(image, cmap='gray', vmin=0, vmax=1)
-        axs[i].axis('off')
+        axs[0][i].imshow(image, cmap='gray', vmin=0, vmax=1)
+        axs[0][i].axis('off')
         if titles is not None:
-            axs[i].set_title(titles[i], fontsize=fontsize)
+            axs[0][i].set_title(titles[i], fontsize=fontsize)
 
     plt.tight_layout()
 
