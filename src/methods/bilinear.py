@@ -54,8 +54,8 @@ class BilinearInterpolation:
         y_points: tuple[int, int],
     ) -> float:
         """
-        Makes bilinear interpolation for ``point`` (x, y) on rectangle with vertexes (x1, y1), (x1, y2),
-        (x2, y1), (x2, y2), where x1, x2, y1, y2 are values of new grid, defined on old grid with
+        Makes bilinear interpolation for ``point`` :math:`(x, y)` on rectangle with vertexes :math:`(x_1, y_1), (x_1, y_2),
+        (x_2, y_1), (x_2, y_2)`, where :math:`x_1, x_2, y_1, y_2` are values of new grid, defined on old grid with
         indices in arrays ``x_points`` and ``y_points``
 
         Parameters
@@ -77,6 +77,15 @@ class BilinearInterpolation:
         predict : float
 
             Interpolated value in point (x, y)
+
+        Examples
+        --------
+        >>> grid = RectangularGrid(x_coords=[0, 2], y_coords=[0, 2])
+        >>> val = [[0, 1], 
+        >>>        [1, 2]]
+        >>> bi = BilinearInterpolation(grid=grid, values=val)
+        >>> bi.bilinear((1, 1), (0, 2), (0, 2))
+        1
         """
 
         x, y = point
@@ -119,5 +128,5 @@ class BilinearInterpolation:
             Interpolated value in point (x, y)
         """
 
-        indices = self._find_nearest(point)
-        return self._bilinear(point, indices[0:2], indices[2:4])
+        indices = self.find_nearest(point)
+        return self.bilinear(point, indices[0:2], indices[2:4])

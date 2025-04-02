@@ -7,9 +7,11 @@ from src.utils.grid import RectangularGrid
 def increase_size(image: np.ndarray, scale: tuple[int, int]) -> np.ndarray:
     """
     Increase size of ``image`` in ``scale`` times (each axes on eaxh scale) using bilinear interpolation.
-    If ``image`` shape was (W, H) and ``scale`` = (N1, N2) then size of output image will be:
+    If ``image`` shape was :math:`(W, H)` and ``scale`` = :math:`(N_1, N_2)` then size of output image will be:
 
-    ((W - 1) * N1 + 1, (H - 1) * N2 + 1)
+    $$
+    ((W - 1) N_1 + 1, (H - 1) N_2 + 1)
+    $$
 
     Parameters
     ----------
