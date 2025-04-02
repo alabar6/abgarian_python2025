@@ -37,3 +37,17 @@ To use some interpolation techinques, run:
 ```pwsh
 poetry run demo --image_dir [...] --method [...] --scale_x [...] --scale_y [...]
 ```
+
+## Test
+
+To pass the tests, run:
+
+```pwsh
+poetry run pytest
+```
+
+To see tests cover, run:
+
+```pwsh
+poetry run pytest --cov
+```
