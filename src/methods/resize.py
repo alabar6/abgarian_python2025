@@ -9,25 +9,23 @@ def increase_size(image: np.ndarray, scale: tuple[int, int]) -> np.ndarray:
     Increase size of ``image`` in ``scale`` times (each axes on eaxh scale) using bilinear interpolation.
     If ``image`` shape was (W, H) and ``scale`` = (N1, N2) then size of output image will be:
 
-    $$
     ((W - 1) * N1 + 1, (H - 1) * N2 + 1)
-    $$
 
     Parameters
     ----------
 
-        image : np.ndarray
+    image : np.ndarray
 
         Source image
 
-        scale : tuple[int, int]
+    scale : tuple[int, int]
 
         Scale value
 
     Returns
     -------
 
-        output : np.ndarray
+    output : np.ndarray
 
         Resized image
     """

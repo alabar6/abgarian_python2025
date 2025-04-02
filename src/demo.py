@@ -24,6 +24,5 @@ def demo(image_dir, method, scale_x, scale_y):
             titles=["Original", "Resized via bilinear interpolation"],
         )
 
-
-if __name__ == "__main__":
-    demo()
+# if __name__ == "__main__":
+#     demo()
