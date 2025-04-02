@@ -4,15 +4,14 @@ from src.methods.bilinear import BilinearInterpolation
 from src.utils.grid import RectangularGrid
 
 
-def increase_size(image: np.ndarray,
-                  scale: tuple[int, int]) -> np.ndarray:
+def increase_size(image: np.ndarray, scale: tuple[int, int]) -> np.ndarray:
     """
-    Increase size of ``image`` in ``scale`` times (each axes on eaxh scale) using bilinear interpolation. 
+    Increase size of ``image`` in ``scale`` times (each axes on eaxh scale) using bilinear interpolation.
     If ``image`` shape was (W, H) and ``scale`` = (N1, N2) then size of output image will be:
 
     $$
     ((W - 1) * N1 + 1, (H - 1) * N2 + 1)
-    $$ 
+    $$
 
     Parameters
     ----------
@@ -35,7 +34,7 @@ def increase_size(image: np.ndarray,
 
     scale_x, scale_y = scale
     w, h = image.shape
-    
+
     new_shape = ((w - 1) * scale_x + 1, (h - 1) * scale_y + 1)
 
     x_new = scale_x * np.arange(0, w + 1)
@@ -50,7 +49,3 @@ def increase_size(image: np.ndarray,
             output[i][j] = bi((i, j))
 
     return output
-
-
-
-

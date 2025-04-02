@@ -33,7 +33,7 @@ class BilinearInterpolation:
         Returns
         -------
           indices: tuple[int, int, int, int]
-          
+
           Indices of x and y chords of points that are close to source ``point``
         """
 
