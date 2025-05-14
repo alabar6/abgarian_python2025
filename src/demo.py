@@ -1,6 +1,6 @@
 import click
 
-from src.methods.resize import increase_size
+from src.methods.resize import increase_size, increase_size_idw
 from src.utils.imagetools import plot_images, read_image
 
 
@@ -24,6 +24,14 @@ def demo(image_dir, method, scale_x, scale_y):
             images=[img, new_image],
             titles=["Original", "Resized via bilinear interpolation"],
         )
+
+    if method == "idw":
+        new_image = increase_size_idw(img, scale)
+        plot_images(
+            images=[img, new_image],
+            titles=["Original", "Resized via inverse distance weighting"],
+        )
+
 
 # if __name__ == "__main__":
 #     demo()
